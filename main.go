@@ -24,8 +24,8 @@ func calculateTax(income int32) int32 {
 		taxGrade := v.Key
 		taxMultiplier := v.Val
 		if restIncome > taxGrade {
-			taxVariable = taxMultiplier * (taxGrade/100)
-			fmt.Println("[1]",taxMultiplier, "persen dikali dengan", (taxGrade),"=", taxVariable)
+			taxVariable = taxMultiplier * ((taxGrade - taxLevelBefore)/100)
+			fmt.Println("[1]",taxMultiplier, "persen dikali dengan", (taxGrade - taxLevelBefore),"=", taxVariable)
 		} else {
 			taxVariable = taxMultiplier * (restIncome/100)
 			fmt.Println("[2]",taxMultiplier, "persen dikali dengan", (restIncome),"=", taxVariable)
